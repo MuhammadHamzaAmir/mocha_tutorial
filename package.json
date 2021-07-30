@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec",
-    "test_nyc":"nyc mocha"
+    "test_nyc": "nyc mocha",
+    "test_alternative_repoerter": "nyc --reporter=html --reporter=text mocha",
+    "_test": "node app/converter.js && mocha app/server.js",
+    "test_run": "nyc npm run _test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
     "express": "^4.17.1",
     "mocha": "^9.0.3",
     "nyc": "^15.1.0",
